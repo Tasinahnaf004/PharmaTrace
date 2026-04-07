@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PharmaTrace | Login</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #2c3e50; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 350px; text-align: center; }
+        h2 { color: #2c3e50; margin-bottom: 25px; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #00d2ff; border: none; color: #2c3e50; font-weight: bold; cursor: pointer; border-radius: 8px; font-size: 1rem; margin-top: 15px; transition: 0.3s; }
+        button:hover { background: #4ca1af; color: white; }
+        .errorlist { color: #e74c3c; list-style: none; padding: 0; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h2>PHARMA<span>TRACE</span></h2>
+       <form method="post">
+    {% csrf_token %}
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username" required>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" id="id_password" required>
+    </div>
+
+    <button type="submit">Login to Dashboard</button>
+</form>
+    </div>
+</body>
+</html>

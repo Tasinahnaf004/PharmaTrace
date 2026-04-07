@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PharmaTrace | RSM Performance</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; padding: 40px; }
+        .container { max-width: 900px; margin: auto; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .header { border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
+        .rsm-box { background: #2c3e50; color: white; padding: 15px 25px; border-radius: 10px; display: inline-block; margin-bottom: 20px; }
+        .sales-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .sales-item { background: linear-gradient(135deg, #ffffff, #f9f9f9); border: 1px solid #eee; padding: 25px; border-radius: 15px; text-align: center; }
+        .amount { font-size: 1.8rem; font-weight: bold; color: #2ecc71; margin-top: 10px; }
+        .back-link { color: #3498db; text-decoration: none; font-weight: bold; display: block; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'region_list' %}" class="back-link">← Return to Regional Overview</a>
+        <div class="card">
+            <div class="header">
+                <h1 style="margin:0; color:#2c3e50;">{{ area.name }} Sales Report</h1>
+                <p style="color:#7f8c8d;">Reporting Period: Last 3 Months</p>
+            </div>
+
+            <div class="rsm-box">
+                Assigned RSM: <strong>Mr. Rahman (Regional Sales Manager)</strong>
+            </div>
+
+            <div class="sales-grid">
+                {% for record in sales %}
+                <div class="sales-item">
+                    <div style="text-transform: uppercase; font-size: 0.8rem; color: #95a5a6;">{{ record.month }}</div>
+                    <div class="amount">৳{{ record.amount }}</div>
+                </div>
+                {% empty %}
+                <p>No sales data found for this district.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

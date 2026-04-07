@@ -1,0 +1,7 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.region_list, name='region_list'),
+    path('area/<int:area_id>/', views.area_detail, name='area_detail'),
+]

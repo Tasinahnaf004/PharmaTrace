@@ -1,0 +1,19 @@
+{
+  "general": {
+    "university name": "Independent University, Bangladesh (IUB)",
+    "location": "Bashundhara R/A, Dhaka",
+    "library hours": "8 AM - 8 PM (Sun–Thu)"
+  },
+  "cse": {
+    "credit requirement": "Minimum 130 credits for BSc CSE",
+    "faculty office": "SET School Office, Level 4"
+  },
+  "bba": {
+    "credit requirement": "Minimum 120 credits for BBA",
+    "admission query": "Contact SBE School Office"
+  },
+  "microbiology": {
+    "credit requirement": "Minimum 140 credits",
+    "lab hours": "10 AM - 4 PM"
+  }
+}
