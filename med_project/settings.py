@@ -7,9 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # 2. AUTOMATICALLY GET THE FOLDER NAME
 PROJECT_NAME = Path(__file__).resolve().parent.name
 
-SECRET_KEY = 'django-insecure-your-secret-key-here'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-your-secret-key-here')
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
